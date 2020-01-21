@@ -30,6 +30,8 @@ cardImage: "images/king-of-hearts.png"
  const cardsInPlay = []
 
 function checkForMatch(){
+	if (cardsInPlay === 2);
+
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You got a match!");
 	} else {
@@ -37,8 +39,8 @@ function checkForMatch(){
 	}
 }
 
-function flipCard(cardId){
-
+function flipCard(cardElement){
+this.getAttribute('data-id');
 console.log("User flipped " + cards[cardId].rank);
 
 cardsInPlay.push(cards[cardId].rank);
@@ -55,9 +57,15 @@ return;
 
 };
 
+function createBoard() {
+	for (var i = 0; i < cards.length; i++ ) {
+		var newListItem = document.createElement('img');
+		newListItem.setAttribute('src', "images/back.png");
+		newListItem.setAttribute('data-id', i );
+		newListItem.appendChild('click', 'flipCard');
 
-flipCard(0);
-flipCard(2);
+	}
+};
 
 checkForMatch();
 
@@ -65,6 +73,8 @@ const cardOne = cards[0];
 
 const cardTwo = cards[2];
 
+
+createBoard();
 
 
 
